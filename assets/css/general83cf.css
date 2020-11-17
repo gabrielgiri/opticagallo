@@ -48,8 +48,8 @@ padding:0px;
 /* HEADER */
 
 .ojo-foto {
-background:url(../img/bg/ojos.jpg) no-repeat center;
-background-size:cover;
+    background: url(../img/bg/ojoseco.jpg) no-repeat center;
+    background-size: cover;
 }
 
 .ojo-header h1,
@@ -59,11 +59,11 @@ width:100%;
 }
 
 .ojo-header h1 {
-height:75px;
-margin:30px 0px 40px;
-text-indent:-9999px;
-background:url(../img/logo/logo.svg) no-repeat center;
-background-size:contain;
+    height: 75px;
+    margin: 30px 0px 40px;
+    text-indent: -9999px;
+    background: url(../img/logo/logo.png) no-repeat center;
+    background-size: contain;
 }
 
 .ojo-header h2 {
