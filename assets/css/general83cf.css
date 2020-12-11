@@ -48,7 +48,7 @@ padding:0px;
 /* HEADER */
 
 .ojo-foto {
-    background: url(../img/bg/ojoseco.jpg) no-repeat center;
+    background: url(../img/bg/ojoseco-full.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -113,14 +113,40 @@ font-weight:700;
 
 /* CONTENIDO */
 
+.main-text {
+    font-family: 'Roboto', sans-serif;
+    top: 150px;
+    font-size: 20px;
+    left: 40px;
+}
+
+
+.main-text span{
+    font-weight:700;
+}
+
 .ojo-titulo  {
-font-size:28px;
-line-height: 30px;
-color:#fff;
-font-weight:700;
-text-transform:uppercase;
-padding:20px 30px;
-text-align:center;	
+  font-size:28px;
+  line-height: 30px;
+  color:#fff;
+  font-weight:700;
+  text-transform:uppercase;
+  padding:20px 30px;
+  text-align:center;	
+}
+
+.ojo-description-pink  {
+  text-align: center;
+  background: #C85C80;		
+}
+
+.ojo-description-pink p {
+  font-size: 16px;
+  line-height: 22px;
+  color:#fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 9px 14%;
 }
 
 .ojo-titulo-negro {
@@ -429,30 +455,6 @@ float:left;
 margin:0px 0px 0px 10px !important;
 }
 
-.ojo-recomendar a:nth-of-type(1) {
-background:url(../img/iconos/whatsapp.svg) no-repeat center;
-background-size:cover;
-width:30px;	
-margin:0px;
-}
-
-.ojo-recomendar a:nth-of-type(2) {
-background:url(../img/iconos/twitter.svg) no-repeat center;
-background-size:cover;
-width:30px;	
-}
-
-.ojo-recomendar a:nth-of-type(3) {
-background:url(../img/iconos/facebook.svg) no-repeat center;
-background-size:cover;
-width:15px;	
-}
-
-.ojo-recomendar a:nth-of-type(4) {
-background:url(../img/iconos/email.svg) no-repeat center;
-background-size:cover;
-width:40px;	
-}
 
 /* FOOTER */
 
@@ -467,6 +469,65 @@ text-align:center;
 .ojo-solo-mobile {
 display:none;
 }
+
+
+
+
+
+
+
+
+
+
+.icon-facebook {
+  background:url(../img/svg/001-facebook.svg) no-repeat center;
+  background-size:cover;
+width:40px;
+display: block;
+height: 40px;
+}
+
+.icon-instagram {
+  background:url(../img/svg/002-instagram.svg) no-repeat center;
+  background-size:cover;
+width:40px;
+display: block;
+height: 40px;
+}
+
+
+.icon-whatsapp {
+  background:url(../img/svg/005-whatsapp.svg) no-repeat center;
+  background-size:cover;
+width:40px;
+display: block;
+height: 40px;
+}
+
+
+.icon-web {
+  background:url(../img/svg/003-cuadricula-de-globo.svg) no-repeat center;
+  background-size:cover;
+width:40px;
+display: block;
+height: 40px;
+}
+
+
+.icon-phone {
+  background:url(../img/svg/004-iphone.svg) no-repeat center;
+  background-size:cover;
+width:40px;
+display: block;
+height: 40px;
+}
+
+
+
+
+
+
+
 
 @media (max-width: 1700px) {
     
@@ -504,7 +565,7 @@ width:100%;
 
 #ojo-result {
     font-size: 22px;
-    line-height: 22px;
+    line-height: 30px;
     font-weight: 400;
     text-align: center;
     color: #fff;
@@ -564,15 +625,15 @@ padding: 0px;
 }
 @media (max-width: 576px) {
 
-    .ojo-eleccion div:first-of-type {
+  .ojo-eleccion div:first-of-type {
     text-align: left;
     text-indent: 30px;
     }
-    .ojo-eleccion div:nth-of-type(2) {
+
+  .ojo-eleccion div:nth-of-type(2) {
     min-width: 80px !important;
     flex-grow: 0;
-    }
-    
+  }
 }
 
 .at-resp-share-element.at-mobile .at-share-btn {
