@@ -14,6 +14,14 @@ a, a:hover {
   text-decoration:none;	
 }
 
+a {
+  color: #aaa;
+}
+
+a:hover {
+  color: #fff;
+}
+
 .ojo-clear {
   clear: both;
   margin: 0 auto !important;
@@ -26,7 +34,7 @@ div {
 
 .container {
   width: calc(100% - 30px);
-  max-width: 1500px !important;
+  max-width: 100% !important;
   padding: 0;
 }
 
@@ -519,6 +527,8 @@ text-align:center;
   color: #A02753;
   font-weight: bold;
   line-height: 36px;
+	    background-position: right;
+    margin-right: 20px;
 }
 
 .icon-instagram span:hover,
@@ -535,7 +545,7 @@ width:100%;
 #ojo-error {
     font-size: 17px;
     line-height: 16px;
-    font-weight: 400;
+    font-weight: 800;
     text-align: center;
     color: #f00;
     padding: 30px 0;
@@ -550,7 +560,6 @@ width:100%;
     text-align: center;
     color: #fff;
     padding: 30px 0;
-    margin: 0 auto;
     background-color: #BDB131;
     margin: 20px 0 0 0;	
     }
@@ -649,7 +658,15 @@ padding: 0px;
     text-align: center;
     text-indent: 0;	
     }
-    
+		
+	.icon-instagram,
+	.icon-facebook,
+	.icon-web,
+	.icon-phone  {
+		background-position: right;
+		margin-right: 20px;
+	}
+	
 }
 @media (max-width: 576px) {
 
@@ -684,35 +701,27 @@ padding: 0px;
 }
 
 .main-text {
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  width: 100%;
-  top: 34px;
-  padding: 10px;
-  left: 0;
-  line-height: 20px;
-}
+    top: 0;
+    width: 100%;
+    font-size: 18px;
+    left: 0;
+    padding: 0 30px;
+    margin-bottom: 5px;
+  }
 
 .main-image {
-  background-image: url(../img/bg/ojoseco.jpg);
-  display: block;
-  width: 100%;
-  min-height: 175px;
-  background-repeat: no-repeat;
-  margin: 0;
-}
-
+	background-image: url(../img/bg/ojoseco.jpg);
+	display: block;
+	width: 100%;
+	min-height: 270px;
+	background-repeat: no-repeat;
+	margin: 0;}
 
 .ojo-description-pink p {
   font-size: 16px;
   line-height: 22px;
   padding: 0;
 }
-
-
-
-
-
 
   .ojo-eleccion div:first-of-type {
     text-align: left;
