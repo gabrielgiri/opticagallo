@@ -5,790 +5,787 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Test Ojo Seco">
-	<meta name="author" content="Optica Gallo">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Test Ojo Seco">
+  <meta name="author" content="Optica Gallo">
 
-	<title>Optica Gallo - Test Ojo Seco</title>
+  <title>Optica Gallo - Test Ojo Seco</title>
 
-	<link rel="canonical" href="#">
+  <link rel="canonical" href="#">
 
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
 
-	<!-- Bootstrap core CSS -->
-	<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-
-	<!-- CSS -->
-	<link href="assets/css/general83cf.css?id=5468438673" rel="stylesheet">
-	<link href="assets/css/modal0d2f.css?id=6399158466" rel="stylesheet">
-
-	<!-- Favicons -->
-	<link rel="icon" type="image/png"
-		href="https://fundacionzambrano.org/wp-content/themes/Zambrano-Theme/images/favicon.ico" />
-
-	<script type="text/javascript">
-
-		function validar(sintomas){
-	
-			if
-			((document.getElementById('sintomas1').checked) &&
-			(document.getElementById('sintomas2').checked) &&
-			(document.getElementById('sintomas3').checked) && 
-			(document.getElementById('sintomas4').checked)) {
-				(document.getElementById('severidad1').checked = true);
-				(document.getElementById('severidad2').checked = true);
-				(document.getElementById('severidad3').checked = true);
-				(document.getElementById('severidad4').checked = true);
-			}
-		}
-
-		function validar_diagnostico(form) {
-			ErrorText = "";
-			
-			if (form.sintomas1.value == "") { ErrorText += "\n* 1."; } else { }
-			if (form.sintomas2.value == "") { ErrorText += "\n* 1."; } else { }
-			if (form.sintomas3.value == "") { ErrorText += "\n* 1."; } else { }
-			if (form.sintomas4.value == "") { ErrorText += "\n* 1."; } else { }
-			if (form.severidad1.value == "") { ErrorText += "\n* 1."; } else { }
-			if (form.severidad2.value == "") { ErrorText += "\n* 1."; } else { }
-			if (form.severidad3.value == "") { ErrorText += "\n* 1."; } else { }
-			if (form.severidad4.value == "") { ErrorText += "\n* 1."; } else { }
-
-			if (ErrorText != "") {
-				document.getElementById("ojo-error").innerHTML = "Por favor, responde todas las preguntas.";
-			}
-			if (ErrorText == "") {
-				document.getElementById("ojo-error").innerHTML = "";
-				console.log(form.sintomas1.value);
-				console.log(form.sintomas2.value);
-				console.log(form.sintomas3.value);
-				console.log(form.sintomas4.value);
-				if
-				(((form.sintomas1.value) == "1") &&
-				((form.sintomas2.value) == "1") &&
-				((form.sintomas3.value) == "1") &&
-				((form.sintomas4.value) == "1")) {
-					document.getElementById("ojo-result").innerHTML = "<b>Usted no tiene ojo seco</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-					document.getElementById("ojo-result").classList.add('d-block');
-				} else if
-				((((form.sintomas1.value) == "2") ||
-				((form.sintomas2.value) == "2") ||
-				((form.sintomas3.value) == "2") ||
-				((form.sintomas4.value) == "2")) && ((
-				((form.sintomas1.value) !== "3") &&
-				((form.sintomas2.value) !== "3") &&
-				((form.sintomas3.value) !== "3") &&
-				((form.sintomas4.value) !== "3")))) {
-					document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco leve</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-					document.getElementById("ojo-result").classList.add('d-block');
-				} else if
-				((((form.sintomas1.value) == "3") ||
-				((form.sintomas2.value) == "3") ||
-				((form.sintomas3.value) == "3") ||
-				((form.sintomas4.value) == "3")) && ((
-				((form.sintomas1.value) !== "4") &&
-				((form.sintomas2.value) !== "4") &&
-				((form.sintomas3.value) !== "4") &&
-				((form.sintomas4.value) !== "4")))) {
-					document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco moderado</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-					document.getElementById("ojo-result").classList.add('d-block');
-				} else if
-				((((form.sintomas1.value) == "4") ||
-				((form.sintomas2.value) == "4") ||
-				((form.sintomas3.value) == "4") ||
-				((form.sintomas4.value) == "4")) && ((
-				((form.sintomas1.value) !== "4") ||
-				((form.sintomas2.value) !== "4") ||
-				((form.sintomas3.value) !== "4") ||
-				((form.sintomas4.value) !== "4")))) {
-					document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco grave</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-					document.getElementById("ojo-result").classList.add('d-block');
-				} else
-
-				if
-				(((form.sintomas1.value) == "4") &&
-				((form.sintomas2.value) == "4") &&
-				((form.sintomas3.value) == "4") &&
-				((form.sintomas4.value) == "4")) {
-					document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco severo</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-					document.getElementById("ojo-result").classList.add('d-block');
-				}
-			}
+  <!-- Bootstrap core CSS -->
+  <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 
-			if (ErrorText == "") {
-				document.getElementById("ojo-error").innerHTML = "";
-				console.log("Severidad: " + form.severidad1.value);
-				console.log("Severidad: " + form.severidad2.value);
-				console.log("Severidad: " + form.severidad3.value);
-				console.log("Severidad: " + form.severidad4.value);
-				if
-				(((form.severidad1.value) == "1") &&
-				((form.severidad2.value) == "1") &&
-				((form.severidad3.value) == "1") &&
-				((form.severidad4.value) == "1")) {
-					document.getElementById("ojo-result").innerHTML = "<b>Usted no tiene ojo seco</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-					document.getElementById("ojo-result").classList.add('d-block');
-				} else if
-				((((form.severidad1.value) == "2") ||
-				((form.severidad2.value) == "2") ||
-				((form.severidad3.value) == "2") ||
-				((form.severidad4.value) == "2")) && ((
-				((form.severidad1.value) !== "3") &&
-				((form.severidad2.value) !== "3") &&
-				((form.severidad3.value) !== "3") &&
-				((form.severidad4.value) !== "3")))) {
-					document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco leve</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-					document.getElementById("ojo-result").classList.add('d-block');
-				} else if
-				((((form.severidad1.value) == "3") ||
-				((form.severidad2.value) == "3") ||
-				((form.severidad3.value) == "3") ||
-				((form.severidad4.value) == "3")) && ((
-				((form.severidad1.value) !== "4") &&
-				((form.severidad2.value) !== "4") &&
-				((form.severidad3.value) !== "4") &&
-				((form.severidad4.value) !== "4")))) {
-					document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco moderado</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-					document.getElementById("ojo-result").classList.add('d-block');
-				} else if
-				((((form.severidad1.value) == "4") ||
-				((form.severidad2.value) == "4") ||
-				((form.severidad3.value) == "4") ||
-				((form.severidad4.value) == "4")) && ((
-				((form.severidad1.value) !== "4") ||
-				((form.severidad2.value) !== "4") ||
-				((form.severidad3.value) !== "4") ||
-				((form.severidad4.value) !== "4")))) {
-					document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco grave</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-					document.getElementById("ojo-result").classList.add('d-block');
-				} else
+  <!-- CSS -->
+  <link href="assets/css/general83cf.css?id=5468438673" rel="stylesheet">
+  <link href="assets/css/modal0d2f.css?id=6399158466" rel="stylesheet">
 
-				if
-				(((form.severidad1.value) == "4") &&
-				((form.severidad2.value) == "4") &&
-				((form.severidad3.value) == "4") &&
-				((form.severidad4.value) == "4")) {
-					document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco severo</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-					document.getElementById("ojo-result").classList.add('d-block');
-				}
-			}
+  <!-- Favicons -->
+  <link rel="icon" type="image/png"
+    href="https://fundacionzambrano.org/wp-content/themes/Zambrano-Theme/images/favicon.ico" />
+
+  <script type="text/javascript">
+
+    function validar(sintomas) {
+
+      if
+        ((document.getElementById('sintomas1').checked) &&
+        (document.getElementById('sintomas2').checked) &&
+        (document.getElementById('sintomas3').checked) &&
+        (document.getElementById('sintomas4').checked)) {
+        (document.getElementById('severidad1').checked = true);
+        (document.getElementById('severidad2').checked = true);
+        (document.getElementById('severidad3').checked = true);
+        (document.getElementById('severidad4').checked = true);
+      }
+    }
+
+    function validar_diagnostico(form) {
+      ErrorText = "";
+
+      if (form.sintomas1.value == "") { ErrorText += "\n* 1."; } else { }
+      if (form.sintomas2.value == "") { ErrorText += "\n* 1."; } else { }
+      if (form.sintomas3.value == "") { ErrorText += "\n* 1."; } else { }
+      if (form.sintomas4.value == "") { ErrorText += "\n* 1."; } else { }
+      if (form.severidad1.value == "") { ErrorText += "\n* 1."; } else { }
+      if (form.severidad2.value == "") { ErrorText += "\n* 1."; } else { }
+      if (form.severidad3.value == "") { ErrorText += "\n* 1."; } else { }
+      if (form.severidad4.value == "") { ErrorText += "\n* 1."; } else { }
+
+      if (ErrorText != "") {
+        document.getElementById("ojo-error").innerHTML = "Por favor, responde todas las preguntas.";
+      }
+      if (ErrorText == "") {
+        document.getElementById("ojo-error").innerHTML = "";
+        document.getElementById("ojo-error").classList.add('d-none');
+        console.log(form.sintomas1.value);
+        console.log(form.sintomas2.value);
+        console.log(form.sintomas3.value);
+        console.log(form.sintomas4.value);
+        if
+          (((form.sintomas1.value) == "1") &&
+          ((form.sintomas2.value) == "1") &&
+          ((form.sintomas3.value) == "1") &&
+          ((form.sintomas4.value) == "1")) {
+          document.getElementById("ojo-result").innerHTML = "<b>Usted no tiene ojo seco</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
+          document.getElementById("ojo-result").classList.add('d-block');
+        } else if
+          ((((form.sintomas1.value) == "2") ||
+            ((form.sintomas2.value) == "2") ||
+            ((form.sintomas3.value) == "2") ||
+            ((form.sintomas4.value) == "2")) && ((
+              ((form.sintomas1.value) !== "3") &&
+              ((form.sintomas2.value) !== "3") &&
+              ((form.sintomas3.value) !== "3") &&
+              ((form.sintomas4.value) !== "3")))) {
+          document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco leve</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
+          document.getElementById("ojo-result").classList.add('d-block');
+        } else if
+          ((((form.sintomas1.value) == "3") ||
+            ((form.sintomas2.value) == "3") ||
+            ((form.sintomas3.value) == "3") ||
+            ((form.sintomas4.value) == "3")) && ((
+              ((form.sintomas1.value) !== "4") &&
+              ((form.sintomas2.value) !== "4") &&
+              ((form.sintomas3.value) !== "4") &&
+              ((form.sintomas4.value) !== "4")))) {
+          document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco moderado</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
+          document.getElementById("ojo-result").classList.add('d-block');
+        } else if
+          ((((form.sintomas1.value) == "4") ||
+            ((form.sintomas2.value) == "4") ||
+            ((form.sintomas3.value) == "4") ||
+            ((form.sintomas4.value) == "4")) && ((
+              ((form.sintomas1.value) !== "4") ||
+              ((form.sintomas2.value) !== "4") ||
+              ((form.sintomas3.value) !== "4") ||
+              ((form.sintomas4.value) !== "4")))) {
+          document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco grave</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
+          document.getElementById("ojo-result").classList.add('d-block');
+        } else
+
+          if
+            (((form.sintomas1.value) == "4") &&
+            ((form.sintomas2.value) == "4") &&
+            ((form.sintomas3.value) == "4") &&
+            ((form.sintomas4.value) == "4")) {
+            document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco severo</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
+            document.getElementById("ojo-result").classList.add('d-block');
+          }
+      }
+
+
+      if (ErrorText == "") {
+        document.getElementById("ojo-error").innerHTML = "";
+        console.log("Severidad: " + form.severidad1.value);
+        console.log("Severidad: " + form.severidad2.value);
+        console.log("Severidad: " + form.severidad3.value);
+        console.log("Severidad: " + form.severidad4.value);
+        if
+          (((form.severidad1.value) == "1") &&
+          ((form.severidad2.value) == "1") &&
+          ((form.severidad3.value) == "1") &&
+          ((form.severidad4.value) == "1")) {
+          document.getElementById("ojo-result").innerHTML = "<b>Usted no tiene ojo seco</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
+          document.getElementById("ojo-result").classList.add('d-block');
+        } else if
+          ((((form.severidad1.value) == "2") ||
+            ((form.severidad2.value) == "2") ||
+            ((form.severidad3.value) == "2") ||
+            ((form.severidad4.value) == "2")) && ((
+              ((form.severidad1.value) !== "3") &&
+              ((form.severidad2.value) !== "3") &&
+              ((form.severidad3.value) !== "3") &&
+              ((form.severidad4.value) !== "3")))) {
+          document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco leve</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
+          document.getElementById("ojo-result").classList.add('d-block');
+        } else if
+          ((((form.severidad1.value) == "3") ||
+            ((form.severidad2.value) == "3") ||
+            ((form.severidad3.value) == "3") ||
+            ((form.severidad4.value) == "3")) && ((
+              ((form.severidad1.value) !== "4") &&
+              ((form.severidad2.value) !== "4") &&
+              ((form.severidad3.value) !== "4") &&
+              ((form.severidad4.value) !== "4")))) {
+          document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco moderado</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
+          document.getElementById("ojo-result").classList.add('d-block');
+        } else if
+          ((((form.severidad1.value) == "4") ||
+            ((form.severidad2.value) == "4") ||
+            ((form.severidad3.value) == "4") ||
+            ((form.severidad4.value) == "4")) && ((
+              ((form.severidad1.value) !== "4") ||
+              ((form.severidad2.value) !== "4") ||
+              ((form.severidad3.value) !== "4") ||
+              ((form.severidad4.value) !== "4")))) {
+          document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco grave</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
+          document.getElementById("ojo-result").classList.add('d-block');
+        } else
+
+          if
+            (((form.severidad1.value) == "4") &&
+            ((form.severidad2.value) == "4") &&
+            ((form.severidad3.value) == "4") &&
+            ((form.severidad4.value) == "4")) {
+            document.getElementById("ojo-result").innerHTML = "<b>Usted tiene un ojo seco severo</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
+            document.getElementById("ojo-result").classList.add('d-block');
+          }
+      }
 
 
 
-		}
-	</script>
+    }
+  </script>
 
 </head>
 
 <body>
 
-	<header>
-
-		<div class="col-lg-6 col-md-6 col-sm-12 ojo-header">
-			<h1>Optica Gallo</h1>
-			<div class="row">
-				
-			</div>
-		</div>
-		
-		
-		
-
-		<div class="container-fluid">
-			<div class="row">
-			  <div class="col-12 px-0 position-relative">
-				  <img class="img-fluid w-100">
-				  <div class="row main-image img-fluid w-100">
-				  <div class="col position-absolute main-text d-none d-sm-block" >
-					<p>El síndrome de <b>ojo seco</b> es causado por una falta crónica de suficiente lubricación y humectación sobre la superficie del ojo.</p>
-					<p>Es uno de los motivos de consulta oftalmológicos más frecuente.</p>
-					<p>El 60% de las personas mayores de 25 años experimentan regularmente síndrome de ojo seco.</p>
-				</div>
-			</div>
-
-
-			  </div>
-			</div>  
-
-		  </div>
-		  
-		<div class="container">
-
-			<div class="row">
-				<div class="">
-
-					<div class="row ojo-header-gris ojo-header-img ojo-solo-mobile">
-
-						<div class="col">
-
-					
-							<div class="ojo-clear"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</header>
-
-	<div class="contenido">
-		<div class="container">
-			<div class="row">
-				
-				
-					<div class="col main-text d-block d-sm-none" >
-					<p>El síndrome de <b>ojo seco</b> es causado por una falta crónica de suficiente lubricación y humectación sobre la superficie del ojo.</p>
-					<p>Es uno de los motivos de consulta oftalmológicos más frecuente.</p>
-					<p>El 60% de las personas mayores de 25 años experimentan regularmente síndrome de ojo seco.</p>
-				</div>
-				
-				<div class="col-12 ojo-titulo ojo-titulo-negro" id="primera_pregunta">TEST DE OJO SECO</div>
-				<div class="col-12 ojo-titulo ojo-description-pink">
-					<p>El ojo seco se produce cuando las lagrimas no logran generar la humedad necesaria. La importancia de su Diagnostico y Tratamiento precoz radica en que su alteracion modifica en diferentes grados la agudeza visual y por ende su calidad de vida.
-					</p>
-					<p class="border p-3 ml-lg-5 mr-lg-5">Este AUTO TEST es de caracter orientativo y busca ayudar a quienes padecen este problema.</p>
-				</div>
-				<div class="col-12 ojo-titulo ojo-titulo-pink">SÍNTOMAS Y FRECUENCIA</div>
-				<form action="https://fundacionzambrano.org/quiz-ojo-seco/resultado.php" method="post">
-					<div class="ojo-solo-desktop">
-						<div class="row col-12 ojo-opciones">
-							<div class="col"></div>
-							<div class="col">Sequedad, picazón o sensación de arenilla dentro del ojo
-
-							</div>
-
-							<div class="col">Dolor o irritación en la superficie del ojo</div>
-							<div class="col">Ardor o exceso de lágrimas</div>
-							<div class="col">Fatiga ocular</div>
-
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">NUNCA</div>
-							<div class="col">
-								<input type="radio" name="sintomas1" id="sintomas1" onchange='validar(this);' value="1" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas2" id="sintomas2" onchange='validar(this);' value="1" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas3" id="sintomas3" onchange='validar(this);' value="1" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas4" id="sintomas4" onchange='validar(this);' value="1" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">A VECES</div>
-							<div class="col">
-								<input type="radio" name="sintomas1" id="sintomas1" value="2" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas2" id="sintomas2" value="2" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas3" id="sintomas3" value="2" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas4" id="sintomas4" value="2" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">SEGUIDO</div>
-							<div class="col">
-								<input type="radio" name="sintomas1" id="sintomas1" value="3" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas2" id="sintomas2" value="3" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas3" id="sintomas3" value="3" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas4" id="sintomas4" value="3" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">SIEMPRE</div>
-									<div class="col">
-								<input type="radio" name="sintomas1" id="sintomas1" value="4" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas2" id="sintomas2" value="4" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas3" id="sintomas3" value="4" />
-							</div>
-							<div class="col">
-								<input type="radio" name="sintomas4" id="sintomas4" value="4" />
-							</div>
-						</div>
-
-					</div>
-
-					<div class="ojo-solo-mobile">
-						<div class="row col-12 ojo-opciones">
-							<div class="col">Sequedad, picazón o sensación de arenilla dentro del ojo</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">NUNCA</div>
-							<div class="col">
-								<input type="radio" name="sintomas1" id="sintomas1" value="1" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">A VECES</div>
-							<div class="col">
-								<input type="radio" name="sintomas1" id="sintomas1" value="2" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">SEGUIDO</div>
-							<div class="col">
-								<input type="radio" name="sintomas1" id="sintomas1" value="3" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">SIEMPRE</div>
-							<div class="col">
-								<input type="radio" name="sintomas1" id="sintomas1" value="4" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-opciones">
-							<div class="col">Dolor o irritación en la superficie del ojo</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">NUNCA</div>
-							<div class="col">
-								<input type="radio" name="sintomas2" id="sintomas2" value="1" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">A VECES</div>
-							<div class="col">
-								<input type="radio" name="sintomas2" id="sintomas2" value="2" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">SEGUIDO</div>
-							<div class="col">	
-						<input type="radio" name="sintomas2" id="sintomas2" value="3" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">SIEMPRE</div>
-							<div class="col">
-								<input type="radio" name="sintomas2" id="sintomas2" value="4" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-opciones">
-							<div class="col">Ardor o exceso de lágrimas</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">NUNCA</div>
-							<div class="col">
-								<input type="radio" name="sintomas3" id="sintomas3" value="1" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">A VECES</div>
-							<div class="col">
-								<input type="radio" name="sintomas3" id="sintomas3" value="2" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">SEGUIDO</div>
-							<div class="col">
-								<input type="radio" name="sintomas3" id="sintomas3" value="3" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">SIEMPRE</div>
-							<div class="col">
-								<input type="radio" name="sintomas3" id="sintomas3" value="4" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-opciones">
-							<div class="col">Fatiga ocular</div>
-
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">NUNCA</div>
-							<div class="col">
-								<input type="radio" name="sintomas4" id="sintomas4" value="1" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">A VECES</div>
-							<div class="col">
-								<input type="radio" name="sintomas4" id="sintomas4" value="2" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">SEGUIDO</div>
-							<div class="col">
-								<input type="radio" name="sintomas4" id="sintomas4" value="3" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">SIEMPRE</div>
-							<div class="col">
-								<input type="radio" name="sintomas4" id="sintomas4" value="4" />
-							</div>
-						</div>
-
-					</div>
-				
-					<div class="col-12 ojo-titulo ojo-titulo-pink">SEVERIDAD DE LOS SÍNTOMAS</div>
-
-					<div class="ojo-solo-desktop">
-
-						<div class="row col-12 ojo-opciones">
-							<div class="col"></div>
-							<div class="col">Sequedad, picazón o sensación de arenilla dentro del ojo</div>
-							<div class="col">Dolor o irritación en la superficie del ojo</div>
-							<div class="col">Ardor o exceso de lágrimas</div>
-							<div class="col">Fatiga ocular</div>
-
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INEXISTENTE</div>
-							<div class="col">
-								<input type="radio" name="severidad1" id="severidad1" value="1" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad2" id="severidad2" value="1" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad3" id="severidad3" value="1" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad4" id="severidad4" value="1" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">TOLERABLE</div>
-							<div class="col">
-								<input type="radio" name="severidad1" id="severidad1" value="2" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad2" id="severidad2" value="2" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad3" id="severidad3" value="2" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad4" id="severidad4" value="2" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">MOLESTO</div>
-							<div class="col">
-								<input type="radio" name="severidad1" id="severidad1" value="3" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad2" id="severidad2" value="3" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad3" id="severidad3" value="3" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad4" id="severidad4" value="3" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INTOLERABLE</div>
-							<div class="col">
-								<input type="radio" name="severidad1" id="severidad1" value="4" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad2" id="severidad2" value="4" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad3" id="severidad3" value="4" />
-							</div>
-							<div class="col">
-								<input type="radio" name="severidad4" id="severidad4" value="4" />
-							</div>
-						</div>
-
-
-					</div>
-
-					<div class="ojo-solo-mobile">
-						<div class="row col-12 ojo-opciones">
-							<div class="col">Sequedad, picazón o sensación de arenilla dentro del ojo</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INEXISTENTE</div>
-							<div class="col">
-								<input type="radio" name="severidad1" id="severidad1" value="1" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">TOLERABLE</div>
-							<div class="col">
-								<input type="radio" name="severidad1" id="severidad1" value="2" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INCÓMODO</div>
-							<div class="col">
-								<input type="radio" name="severidad1" id="severidad1" value="3" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">MOLESTO</div>
-							<div class="col">
-								<input type="radio" name="severidad1" id="severidad1" value="4" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INTOLERABLE</div>
-							<div class="col">
-								<input type="radio" name="severidad1" id="severidad1" value="5" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-opciones">
-
-							<div class="col">Dolor o irritación en la superficie del ojo</div>
-
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INEXISTENTE</div>
-							<div class="col">
-								<input type="radio" name="severidad2" id="severidad2" value="1" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">TOLERABLE</div>
-							<div class="col">
-								<input type="radio" name="severidad2" id="severidad2" value="2" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INCÓMODO</div>
-							<div class="col">
-								<input type="radio" name="severidad2" id="severidad2" value="3" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">MOLESTO</div>
-							<div class="col">
-								<input type="radio" name="severidad2" id="severidad2" value="4" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INTOLERABLE</div>
-							<div class="col">
-								<input type="radio" name="severidad2" id="severidad2" value="5" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-opciones">
-							<div class="col">Ardor o exceso de lágrimas</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INEXISTENTE</div>
-							<div class="col">
-								<input type="radio" name="severidad3" id="severidad3" value="1" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">TOLERABLE</div>
-							<div class="col">
-								<input type="radio" name="severidad3" id="severidad3" value="2" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INCÓMODO</div>
-							<div class="col">
-								<input type="radio" name="severidad3" id="severidad3" value="3" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">MOLESTO</div>
-							<div class="col">
-								<input type="radio" name="severidad3" id="severidad3" value="4" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INTOLERABLE</div>
-							<div class="col">
-								<input type="radio" name="severidad3" id="severidad3" value="5" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-opciones">
-							<div class="col">Fatiga ocular</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INEXISTENTE</div>
-							<div class="col">
-								<input type="radio" name="severidad4" id="severidad4" value="1" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">TOLERABLE</div>
-							<div class="col">
-								<input type="radio" name="severidad4" id="severidad4" value="2" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INCÓMODO</div>
-							<div class="col">
-								<input type="radio" name="severidad4" id="severidad4" value="3" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">MOLESTO</div>
-							<div class="col">
-								<input type="radio" name="severidad4" id="severidad4" value="4" />
-							</div>
-						</div>
-
-						<div class="row col-12 ojo-eleccion ojo-eleccion-white">
-							<div class="col">INTOLERABLE</div>
-							<div class="col">
-								<input type="radio" name="severidad4" id="severidad4" value="5" />
-							</div>
-						</div>
-
-					</div>
-				
-					<div class="col-12 ojo-obtener-resultados">
-						<input type="button" name="obtener-resultados" id="obtener-resultados"
-							value="Iniciar Test" onClick="validar_diagnostico(this.form);" />
-					</div>
-<div class="text-center pt-4">
-					<p>AUSPICIA</p>
-<p class="border p-3 w-50 text-center mx-auto"><b>SU LOGO AQUÍ</b></p>
-</div>					
-					<div class="col-12 ojo-obtener-resultados" id="ojo-error"></div>
-					<div class="col-12 ojo-obtener-resultados d-none" id="ojo-result"></div>
-
-				</form>
-			</div>
-		</div>
-	</div>
-
-
-	<section class="seccionContacto">
-
-
-		<div class="container-lg">
-			<h1>Contacto</h1>
-			<div class="row">
-			
-				<div class="col-12 col-md-6">
-
-		<div class="cont">
-	
-		
-		<a id="contacto"></a>
-	
-	  <div class="contContacto">
-	
-		
-		<div class="contDatos">
-			<p class="contactoDatos1">
-				<span class="tel1"><b>0341 4406095</b></span>Líneas rotativas
-			</p>
-			<p class="contactoDatos2">
-				<span class="tel2"><b>0341 4406095</b></span>Urgencias 24 hs
-			</p>
-			<a href="https://wa.link/ewhgs4" target="_blank" class="contactoDatos3">
-				<span class="tel2"><b>54 9 341 4406095</b></span>Turnos Whatsapp
-			</a>
-					<p class="contactoMail">info@clinicagallocena.com.ar</p>
-	
-			<p class="contactoMail">Balcarce 1085 Rosario</p>
-	
-			<p class="contactoDatos1"><span class="tel1"><b>0341 4470418</b></span> (Pami)</p>
-	
-			<p class="redesSocial">
-			<a href="https://www.facebook.com/clinicagallocena" target="_blank" class="red1 botonRedes"></a>        </p>
-			<div class="clear"></div>
-		</div>
-
-	  </div>
-	  </div>
-	</div>
-
-
-
-<div class="col-12 col-md-6">
-<a href="https://www.facebook.com/clinicagallocena/" class="icon-facebook"><span>FACEBOOK</span></a>
-<a href="https://www.instagram.com/institutooftalmologicorosario/" class="icon-instagram"><span>INSTAGRAM</span></a>
-<a href="https://www.facebook.com/clinicagallocena/" class="icon-whatsapp"></a>
-<a href="https://clinicagallocena.com.ar/" class="icon-web"><span>clinicagallocena.com.ar </span></a>
-<a href="http://ior.logimed.com.ar/" class="icon-phone"><span>TURNO ONLINE</span></a>
-
-</div>
-</div>
-
-
-	</section>
-	<div class="col text-center mb-3 leopardo"><b><a href="http://leopardoweb.com.ar" target="_blank">Leopardo Web</a> 2020 &copy; Todos los derechos reservados.</b>
-
-
-
-	<script src="../../code.jquery.com/jquery-3.5.1.slim.min.js"
-		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
-	<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
-
+  <header>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 ojo-header">
+      <h1>Optica Gallo</h1>
+      <div class="row">
+
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 px-0 position-relative">
+          <img class="img-fluid w-100">
+          <div class="row main-image img-fluid w-100">
+            <div class="col position-absolute main-text d-none d-sm-block">
+              <p>El síndrome de <b>ojo seco</b> es causado por una falta crónica de suficiente lubricación y humectación
+                sobre la superficie del ojo.</p>
+              <p>Es uno de los motivos de consulta oftalmológicos más frecuente.</p>
+              <p>El 60% de las personas mayores de 25 años experimentan regularmente síndrome de ojo seco.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Resultado del Test</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="col-12 ojo-obtener-resultados" id="ojo-error"></div>
+            <div class="col-12 ojo-obtener-resultados d-none" id="ojo-result"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="">
+
+          <div class="row ojo-header-gris ojo-header-img ojo-solo-mobile">
+
+            <div class="col">
+
+              <div class="ojo-clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <div class="contenido">
+    <div class="container">
+      <div class="row">
+
+
+        <div class="col main-text d-block d-sm-none">
+          <p>El síndrome de <b>ojo seco</b> es causado por una falta crónica de suficiente lubricación y humectación
+            sobre la superficie del ojo.</p>
+          <p>Es uno de los motivos de consulta oftalmológicos más frecuente.</p>
+          <p>El 60% de las personas mayores de 25 años experimentan regularmente síndrome de ojo seco.</p>
+        </div>
+
+        <div class="col-12 ojo-titulo ojo-titulo-negro" id="primera_pregunta">TEST DE OJO SECO</div>
+        <div class="col-12 ojo-titulo ojo-description-pink">
+          <p>El ojo seco se produce cuando las lagrimas no logran generar la humedad necesaria. La importancia de su
+            Diagnostico y Tratamiento precoz radica en que su alteracion modifica en diferentes grados la agudeza visual
+            y por ende su calidad de vida.
+          </p>
+          <p class="border p-3 ml-lg-5 mr-lg-5">Este TEST es de caracter orientativo y busca ayudar a quienes
+            padecen este problema.</p>
+        </div>
+        <div class="col-12 ojo-titulo ojo-titulo-pink">SÍNTOMAS Y FRECUENCIA</div>
+        <form action="https://fundacionzambrano.org/quiz-ojo-seco/resultado.php" method="post">
+          <div class="ojo-solo-desktop">
+            <div class="row col-12 ojo-opciones">
+              <div class="col"></div>
+              <div class="col">Sequedad, picazón o sensación de arenilla dentro del ojo
+
+              </div>
+
+              <div class="col">Dolor o irritación en la superficie del ojo</div>
+              <div class="col">Ardor o exceso de lágrimas</div>
+              <div class="col">Fatiga ocular</div>
+
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">NUNCA</div>
+              <div class="col">
+                <input type="radio" name="sintomas1" id="sintomas1" onchange='validar(this);' value="1" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas2" id="sintomas2" onchange='validar(this);' value="1" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas3" id="sintomas3" onchange='validar(this);' value="1" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas4" id="sintomas4" onchange='validar(this);' value="1" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">A VECES</div>
+              <div class="col">
+                <input type="radio" name="sintomas1" id="sintomas1" value="2" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas2" id="sintomas2" value="2" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas3" id="sintomas3" value="2" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas4" id="sintomas4" value="2" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">SEGUIDO</div>
+              <div class="col">
+                <input type="radio" name="sintomas1" id="sintomas1" value="3" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas2" id="sintomas2" value="3" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas3" id="sintomas3" value="3" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas4" id="sintomas4" value="3" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">SIEMPRE</div>
+              <div class="col">
+                <input type="radio" name="sintomas1" id="sintomas1" value="4" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas2" id="sintomas2" value="4" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas3" id="sintomas3" value="4" />
+              </div>
+              <div class="col">
+                <input type="radio" name="sintomas4" id="sintomas4" value="4" />
+              </div>
+            </div>
+
+          </div>
+
+          <div class="ojo-solo-mobile">
+            <div class="row col-12 ojo-opciones">
+              <div class="col">Sequedad, picazón o sensación de arenilla dentro del ojo</div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">NUNCA</div>
+              <div class="col">
+                <input type="radio" name="sintomas1" id="sintomas1" value="1" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">A VECES</div>
+              <div class="col">
+                <input type="radio" name="sintomas1" id="sintomas1" value="2" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">SEGUIDO</div>
+              <div class="col">
+                <input type="radio" name="sintomas1" id="sintomas1" value="3" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">SIEMPRE</div>
+              <div class="col">
+                <input type="radio" name="sintomas1" id="sintomas1" value="4" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-opciones">
+              <div class="col">Dolor o irritación en la superficie del ojo</div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">NUNCA</div>
+              <div class="col">
+                <input type="radio" name="sintomas2" id="sintomas2" value="1" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">A VECES</div>
+              <div class="col">
+                <input type="radio" name="sintomas2" id="sintomas2" value="2" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">SEGUIDO</div>
+              <div class="col">
+                <input type="radio" name="sintomas2" id="sintomas2" value="3" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">SIEMPRE</div>
+              <div class="col">
+                <input type="radio" name="sintomas2" id="sintomas2" value="4" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-opciones">
+              <div class="col">Ardor o exceso de lágrimas</div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">NUNCA</div>
+              <div class="col">
+                <input type="radio" name="sintomas3" id="sintomas3" value="1" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">A VECES</div>
+              <div class="col">
+                <input type="radio" name="sintomas3" id="sintomas3" value="2" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">SEGUIDO</div>
+              <div class="col">
+                <input type="radio" name="sintomas3" id="sintomas3" value="3" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">SIEMPRE</div>
+              <div class="col">
+                <input type="radio" name="sintomas3" id="sintomas3" value="4" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-opciones">
+              <div class="col">Fatiga ocular</div>
+
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">NUNCA</div>
+              <div class="col">
+                <input type="radio" name="sintomas4" id="sintomas4" value="1" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">A VECES</div>
+              <div class="col">
+                <input type="radio" name="sintomas4" id="sintomas4" value="2" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">SEGUIDO</div>
+              <div class="col">
+                <input type="radio" name="sintomas4" id="sintomas4" value="3" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">SIEMPRE</div>
+              <div class="col">
+                <input type="radio" name="sintomas4" id="sintomas4" value="4" />
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-12 ojo-titulo ojo-titulo-pink">SEVERIDAD DE LOS SÍNTOMAS</div>
+
+          <div class="ojo-solo-desktop">
+
+            <div class="row col-12 ojo-opciones">
+              <div class="col"></div>
+              <div class="col">Sequedad, picazón o sensación de arenilla dentro del ojo</div>
+              <div class="col">Dolor o irritación en la superficie del ojo</div>
+              <div class="col">Ardor o exceso de lágrimas</div>
+              <div class="col">Fatiga ocular</div>
+
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">INEXISTENTE</div>
+              <div class="col">
+                <input type="radio" name="severidad1" id="severidad1" value="1" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad2" id="severidad2" value="1" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad3" id="severidad3" value="1" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad4" id="severidad4" value="1" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">TOLERABLE</div>
+              <div class="col">
+                <input type="radio" name="severidad1" id="severidad1" value="2" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad2" id="severidad2" value="2" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad3" id="severidad3" value="2" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad4" id="severidad4" value="2" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">MOLESTO</div>
+              <div class="col">
+                <input type="radio" name="severidad1" id="severidad1" value="3" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad2" id="severidad2" value="3" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad3" id="severidad3" value="3" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad4" id="severidad4" value="3" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">INTOLERABLE</div>
+              <div class="col">
+                <input type="radio" name="severidad1" id="severidad1" value="4" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad2" id="severidad2" value="4" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad3" id="severidad3" value="4" />
+              </div>
+              <div class="col">
+                <input type="radio" name="severidad4" id="severidad4" value="4" />
+              </div>
+            </div>
+
+          </div>
+
+          <div class="ojo-solo-mobile">
+            <div class="row col-12 ojo-opciones">
+              <div class="col">Sequedad, picazón o sensación de arenilla dentro del ojo</div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">INEXISTENTE</div>
+              <div class="col">
+                <input type="radio" name="severidad1" id="severidad1" value="1" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">TOLERABLE</div>
+              <div class="col">
+                <input type="radio" name="severidad1" id="severidad1" value="2" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">MOLESTO</div>
+              <div class="col">
+                <input type="radio" name="severidad1" id="severidad1" value="3" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">INTOLERABLE</div>
+              <div class="col">
+                <input type="radio" name="severidad1" id="severidad1" value="4" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-opciones">
+
+              <div class="col">Dolor o irritación en la superficie del ojo</div>
+
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">INEXISTENTE</div>
+              <div class="col">
+                <input type="radio" name="severidad2" id="severidad2" value="1" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">TOLERABLE</div>
+              <div class="col">
+                <input type="radio" name="severidad2" id="severidad2" value="2" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">MOLESTO</div>
+              <div class="col">
+                <input type="radio" name="severidad2" id="severidad2" value="3" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">INTOLERABLE</div>
+              <div class="col">
+                <input type="radio" name="severidad2" id="severidad2" value="4" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-opciones">
+              <div class="col">Ardor o exceso de lágrimas</div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">INEXISTENTE</div>
+              <div class="col">
+                <input type="radio" name="severidad3" id="severidad3" value="1" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">TOLERABLE</div>
+              <div class="col">
+                <input type="radio" name="severidad3" id="severidad3" value="2" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">MOLESTO</div>
+              <div class="col">
+                <input type="radio" name="severidad3" id="severidad3" value="3" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">INTOLERABLE</div>
+              <div class="col">
+                <input type="radio" name="severidad3" id="severidad3" value="4" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-opciones">
+              <div class="col">Fatiga ocular</div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">INEXISTENTE</div>
+              <div class="col">
+                <input type="radio" name="severidad4" id="severidad4" value="1" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">TOLERABLE</div>
+              <div class="col">
+                <input type="radio" name="severidad4" id="severidad4" value="2" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">MOLESTO</div>
+              <div class="col">
+                <input type="radio" name="severidad4" id="severidad4" value="3" />
+              </div>
+            </div>
+
+            <div class="row col-12 ojo-eleccion ojo-eleccion-white">
+              <div class="col">INTOLERABLE</div>
+              <div class="col">
+                <input type="radio" name="severidad4" id="severidad4" value="4" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 ojo-obtener-resultados">
+            <input type="button" data-toggle="modal" data-target="#exampleModal" name="obtener-resultados"
+              id="obtener-resultados" value="Iniciar Test" onClick="validar_diagnostico(this.form);" />
+          </div>
+
+
+          <div class="text-center pt-4">
+            <p>AUSPICIA</p>
+            <p class="border p-3 w-50 text-center mx-auto"><b>SU LOGO AQUÍ</b></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <section class="seccionContacto">
+
+    <div class="container-lg">
+      <h1>Contacto</h1>
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+
+          <div class="cont">
+
+
+            <a id="contacto"></a>
+
+            <div class="contContacto">
+
+
+              <div class="contDatos">
+                <p class="contactoDatos1">
+                  <span class="tel1"><b>0341 4406095</b></span>Líneas rotativas
+                </p>
+                <p class="contactoDatos2">
+                  <span class="tel2"><b>0341 4406095</b></span>Urgencias 24 hs
+                </p>
+                <a href="https://wa.link/ewhgs4" target="_blank" class="contactoDatos3">
+                  <span class="tel2"><b>54 9 341 4406095</b></span>Turnos Whatsapp
+                </a>
+                <p class="contactoMail">info@clinicagallocena.com.ar</p>
+
+                <p class="contactoMail">Balcarce 1085 Rosario</p>
+
+                <p class="contactoDatos1"><span class="tel1"><b>0341 4470418</b></span> (Pami)</p>
+
+                <p class="redesSocial">
+                  <a href="https://www.facebook.com/clinicagallocena" target="_blank" class="red1 botonRedes"></a>
+                </p>
+                <div class="clear"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-md-6">
+          <a href="https://www.facebook.com/clinicagallocena/" class="icon-facebook"><span>FACEBOOK</span></a>
+          <a href="https://www.instagram.com/institutooftalmologicorosario/"
+            class="icon-instagram"><span>INSTAGRAM</span></a>
+          <a href="https://www.facebook.com/clinicagallocena/" class="icon-whatsapp"></a>
+          <a href="https://clinicagallocena.com.ar/" class="icon-web"><span>clinicagallocena.com.ar </span></a>
+          <a href="http://ior.logimed.com.ar/" class="icon-phone"><span>TURNO ONLINE</span></a>
+
+        </div>
+      </div>
+
+
+  </section>
+  <div class="col text-center mb-3 leopardo"><b><a href="http://leopardoweb.com.ar" target="_blank">Leopardo Web</a>
+      2020 &copy; Todos los derechos reservados.</b>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
 
 
 </body>
