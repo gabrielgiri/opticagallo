@@ -67,13 +67,16 @@
         console.log(form.sintomas2.value);
         console.log(form.sintomas3.value);
         console.log(form.sintomas4.value);
+		            	document.getElementById("ojo-result").classList.add('d-block');
+			document.getElementById("button-turnos").classList.add('d-block');
+			document.getElementById("button-whatsapp").classList.add('d-block');
         if
           (((form.sintomas1.value) == "1") &&
           ((form.sintomas2.value) == "1") &&
           ((form.sintomas3.value) == "1") &&
           ((form.sintomas4.value) == "1")) {
           document.getElementById("ojo-result").innerHTML = "<b>Usted no tiene ojo seco</b><br>Consulte con nuestros profesionales para un diagnóstico más preciso.";
-          document.getElementById("ojo-result").classList.add('d-block');
+			 
         } else if
           ((((form.sintomas1.value) == "2") ||
             ((form.sintomas2.value) == "2") ||
@@ -118,7 +121,6 @@
             document.getElementById("ojo-result").classList.add('d-block');
           }
       }
-
 
       if (ErrorText == "") {
         document.getElementById("ojo-error").innerHTML = "";
@@ -177,9 +179,6 @@
             document.getElementById("ojo-result").classList.add('d-block');
           }
       }
-
-
-
     }
   </script>
 
@@ -212,11 +211,6 @@
       </div>
     </div>
 
-
-
-
-
-    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -232,28 +226,24 @@
             <div class="col-12 ojo-obtener-resultados d-none" id="ojo-result"></div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
+            <button type="button" class="btn btn-secondary w-100 w-lg-auto" data-dismiss="modal">Cerrar</button>
+			<button type="button" class="btn btn-primary d-none w-100 w-lg-auto" id="button-turnos" target="_blank" onclick="location.href='http://ior.logimed.com.ar/';" data-dismiss="modal">Solicitar turno ONLINE</button>
+  
           </div>
+			 <a href="https://wa.link/ewhgs4" target="_blank" class="text-center contactoDatos3 d-none" id="button-whatsapp">
+                  <span class="tel2"><b>341-4406095</b></span>&nbsp;Turnos Whatsapp
+                </a>
         </div>
       </div>
     </div>
 
-
-
     <div class="container">
-
       <div class="row">
-        <div class="">
-
           <div class="row ojo-header-gris ojo-header-img ojo-solo-mobile">
-
             <div class="col">
-
               <div class="ojo-clear"></div>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
@@ -262,7 +252,6 @@
   <div class="contenido">
     <div class="container">
       <div class="row">
-
 
         <div class="col main-text d-block d-sm-none">
           <p>El síndrome de <b>ojo seco</b> es causado por una falta crónica de suficiente lubricación y humectación
@@ -285,10 +274,7 @@
           <div class="ojo-solo-desktop">
             <div class="row col-12 ojo-opciones">
               <div class="col"></div>
-              <div class="col">Sequedad, picazón o sensación de arenilla dentro del ojo
-
-              </div>
-
+              <div class="col">Sequedad, picazón o sensación de arenilla dentro del ojo</div>
               <div class="col">Dolor o irritación en la superficie del ojo</div>
               <div class="col">Ardor o exceso de lágrimas</div>
               <div class="col">Fatiga ocular</div>
@@ -709,7 +695,6 @@
               id="obtener-resultados" value="Iniciar Test" onClick="validar_diagnostico(this.form);" />
           </div>
 
-
           <div class="text-center pt-4">
             <p>AUSPICIA</p>
             <p class="border p-3 w-50 text-center mx-auto"><b>SU LOGO AQUÍ</b></p>
@@ -730,11 +715,9 @@
 
           <div class="cont">
 
-
             <a id="contacto"></a>
 
             <div class="contContacto">
-
 
               <div class="contDatos">
                 <p class="contactoDatos1">
@@ -762,7 +745,6 @@
           </div>
         </div>
 
-
         <div class="col-12 col-md-6">
           <a href="https://www.facebook.com/clinicagallocena/" class="icon-facebook"><span>FACEBOOK</span></a>
           <a href="https://www.instagram.com/institutooftalmologicorosario/"
@@ -774,18 +756,16 @@
         </div>
       </div>
 
-
   </section>
-  <div class="col text-center mb-3 leopardo"><b><a href="http://leopardoweb.com.ar" target="_blank">Leopardo Web</a>
+ <div class="col text-center mb-3 leopardo"><b><a href="http://leopardoweb.com.ar" target="_blank">Leopardo Web</a>
       2020 &copy; Todos los derechos reservados.</b>
-
+ 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
       integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
-
 
 </body>
 
